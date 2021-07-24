@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Roboto+Slab&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  background-color: #e5f6ff;
+}
+
+/* dark mode and light mode */
+
+/* dark mode website */
+body.dark {
+  background-color: rgb(0, 0, 0);
+}
+.label {
+  position: relative;
+  float: right;
+  background-color: #111;
+  margin-right: 8px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 50px;
+  width: 54px;
+  height: 30px;
+}
+.fa-moon {
+  color: #f1c40f;
+}
+.fa-sun {
+  color: #f39c12;
+}
+.ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 25px;
+  height: 24px;
+  transition: transform 0.2s linear;
+}
+.checkbox {
+  position: absolute;
+  border: 1px solid red;
+  width: 12px;
+  height: 12px;
+  top: 52px;
+  right: 30px;
+  opacity: 0;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(20px);
+}
+/* end here */
+
+/* Site Heading */
+.heading h1 {
+  color: #fff;
+  background: linear-gradient(
+    120deg,
+    rgba(28, 47, 49, 0.89) 87%,
+    rgb(134, 91, 91)
+  );
+  font-weight: bold;
+  line-height: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 1.2s ease-in-out;
+  /* transition: transform 0.5s; */
+}
+
+.heading h1:hover {
+  text-shadow: #ce7979 0 1px 0;
+}
+/* End Here */
+
+/* Covid Data Box Start Here */
+.world-Case_Section {
+  /* border: 2px solid green; */
+  margin-top: 4rem;
+}
+.covid_Data_Box {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+  margin-top: 15px;
+}
+.total_Case_Box,
+.recovered_Case_Box,
+.deaths_Case_Box {
+  text-align: center;
+  color: #35415f;
+  padding: 1.5rem;
+  border: 1px solid #fff;
+  width: 21px;
+  border-top: 10px solid rgb(206, 143, 143);
+  border-radius: 5px;
+  box-shadow: 5px 3px 3px 2px #7a7878;
+  transition: all 0.5s;
+  background-size: 100% 200%;
+}
+h3:hover {
+  font-weight: bold;
+  text-shadow: #d8c2c2 0 0 1rem;
+}
+.total_Case_Box {
+  background-image: linear-gradient(to top, rgb(51, 102, 145) 50%, #fff 50%);
+}
+.total_Case_Box:hover {
+  background-position: 0% 100%;
+  color: #fff;
+  border-top: 10px solid #fff;
+}
+.recovered_Case_Box {
+  background-image: linear-gradient(to top, rgb(97, 141, 72) 50%, #fff 50%);
+}
+.recovered_Case_Box:hover {
+  background-position: 0% 100%;
+  color: #fff;
+  border-top: 10px solid #fff;
+}
+.deaths_Case_Box {
+  background-image: linear-gradient(to top, rgb(199, 59, 59) 50%, #fff 50%);
+}
+.deaths_Case_Box:hover {
+  background-position: 0% 100%;
+  color: #fff;
+  border-top: 10px solid #fff;
+}
+/* End Here */
+
+/* Table Start Here */
+table {
+  width: 100%;
+  height: auto;
+}
+table,
+th,
+td {
+  border: 2px solid rgb(100, 37, 37);
+
+  border-collapse: collapse;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 2px #7a7878;
+}
+tr td:nth-child(1) {
+  position: sticky;
+  left: 0;
+}
+tr td:nth-child(2) {
+  position: sticky;
+  left: 0;
+}
+/* End Here */
+
+/* state name map start here */
+.stateName {
+  color: rgb(161, 142, 142);
+  font-style: italic;
+  transition: all 0.3s ease-in-out;
+}
+.stateName:hover {
+  text-shadow: #ce7979 2px 1px 0;
+}
+
+.stateWiseData {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.active {
+  color: rgba(59, 59, 152, 1);
+}
+.stateWiseData h6 {
+  font-weight: bold;
+}
+.confirmed {
+  color: #074632;
+}
+.recovered {
+  color: #0c9723;
+}
+.died {
+  color: #e53511;
+}
+/* End Here */
+
+/* Map Start Here  */
+svg {
+  width: 100%;
+  height: 700px;
+}
+/* End Here */
+
+/* media query for covid box */
+@media screen and (max-width: 768px) {
+  /* covid box */
+  .recovered_Case_Box,
+  .deaths_Case_Box {
+    margin-top: 32px;
+  }
+  /* end here */
+
+  /* table box */
+  tr td:nth-child(1) {
+    background-color: #b5c7d1;
+  }
+  tr td:nth-child(2) {
+    background-color: #b5c7d1;
+  }
+  /* end here */
+}
+/* end here */
