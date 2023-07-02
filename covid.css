@@ -140,7 +140,10 @@ h3:hover {
   border-top: 10px solid #fff;
 }
 /* End Here */
+.List_case {
+  color: rgb(161, 142, 142);
 
+}
 /* Table Start Here */
 table {
   width: 100%;
@@ -155,6 +158,12 @@ td {
   text-align: center;
   border-radius: 5px;
   box-shadow: 3px 3px 2px 2px #7a7878;
+}
+table,tr,th {
+  color: rgb(161, 142, 142);
+}
+th:hover {
+  color: rgb(161, 142, 142);
 }
 tr td:nth-child(1) {
   position: sticky;

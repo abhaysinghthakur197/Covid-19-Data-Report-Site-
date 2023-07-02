@@ -13,11 +13,14 @@ confirmed = [];
 deaths = [];
 recovered = [];
 lastUpd = [];
-const apifetch = () => {
-  let apidata =   fetch('https://api.covid19india.org/data.json');
-       apidata.then((apidata) => {
-            return apidata.json();
+
+
+function apifetch() {
+    fetch("https://data.covid19india.org/data.json")
+        .then((apidata) => {
+           return apidata.json();
         }).then((apidata) => {
+
             console.log(apidata);
             totalcase = apidata.statewise[0].active;
             totalrecovered = apidata.statewise[0].recovered;
@@ -62,7 +65,7 @@ const apifetch = () => {
             });
             // End Here
 
-            // console.log("got it ! here");
+            
 
             // Show Table
             const showData = () => {
@@ -104,8 +107,9 @@ const apifetch = () => {
             document.querySelector(".recoveredconfigdata").innerHTML = apidata.statewise[0].recovered;
             document.querySelector(".diedconfigdata").innerHTML = apidata.statewise[0].deaths;
             document.querySelector(".stateName").innerHTML = 'Total'
+})
 
-        })
+        
     // End Here
 
 }
@@ -170,16 +174,18 @@ const checkbox = document.getElementById('checkbox');
 checkbox.addEventListener('change', () => {
     document.body.classList.toggle('dark');
     // document.querySelectorAll("h1").classList.toggle('colorChange_Heading');
-    document.querySelector('.total_Case_Box').style.color = '#00aeef';
-    document.querySelector('.recovered_Case_Box').style.color = '#006600';
-    document.querySelector('.deaths_Case_Box').style.color = '#630000';
+    // document.querySelector('.total_Case_Box').style.color = '#00aeef';
+    // document.querySelector('.recovered_Case_Box').style.color = '#006600';
+    // document.querySelector('.deaths_Case_Box').style.color = '#630000';
     document.querySelector('.heading h1').style.textShadow = '#ff0000 0 1px 0';
+    
 });
 // End Here
 
+
 // Map Data
 const stateData = (statename) => {
-    fetch('https://api.covid19india.org/data.json')
+    fetch('https://data.covid19india.org/data.json')
         .then((mapdata) => {
             return mapdata.json();
         }).then((mapdata) => {
@@ -200,8 +206,10 @@ const stateData = (statename) => {
         });
 
 }
-// End Here
-stateData(statename);//Calling the function
+// End Here4
+let statename;
+stateData(statename);
+//Calling the function
 
 
 
