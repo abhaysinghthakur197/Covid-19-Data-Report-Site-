@@ -14,8 +14,8 @@ deaths = [];
 recovered = [];
 lastUpd = [];
 const apifetch = () => {
-    fetch('https://api.covid19india.org/data.json')
-        .then((apidata) => {
+  let apidata =   fetch('https://api.covid19india.org/data.json');
+       apidata.then((apidata) => {
             return apidata.json();
         }).then((apidata) => {
             console.log(apidata);
